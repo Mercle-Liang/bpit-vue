@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=/bpit-vue/favicon.ico><style>body {
+      background: #f4b267;
+      margin: 0;
+      padding: 0;
+    }
+
+    #app {
+      height: 100%
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .index-loaders-container {
+      position: fixed;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      /* font-size: 0; */
+    }
+
+    .container {
+      height: 100vh;
+      width: 100vw;
+      font-family: Helvetica;
+    }
+
+    .index-loader {
+      height: 20px;
+      width: 250px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .index-loader--dot {
+      animation-name: loader;
+      animation-timing-function: ease-in-out;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      height: 20px;
+      width: 20px;
+      border-radius: 100%;
+      background-color: black;
+      position: absolute;
+      border: 2px solid white;
+    }
+
+    .index-loader--dot:first-child {
+      background-color: #8cc759;
+      animation-delay: 0.5s;
+    }
+
+    .index-loader--dot:nth-child(2) {
+      background-color: #8c6daf;
+      animation-delay: 0.4s;
+    }
+
+    .index-loader--dot:nth-child(3) {
+      background-color: #ef5d74;
+      animation-delay: 0.3s;
+    }
+
+    .index-loader--dot:nth-child(4) {
+      background-color: #f9a74b;
+      animation-delay: 0.2s;
+    }
+
+    .index-loader--dot:nth-child(5) {
+      background-color: #60beeb;
+      animation-delay: 0.1s;
+    }
+
+    .index-loader--dot:nth-child(6) {
+      background-color: #fbef5a;
+      animation-delay: 0s;
+    }
+
+    .index-loader--text {
+      position: absolute;
+      top: 200%;
+      left: 0;
+      right: 0;
+      width: 4rem;
+      margin: auto;
+    }
+
+    .index-loader--text:after {
+      content: "Loading";
+      font-weight: bold;
+      animation-name: loading-text;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes index-loader {
+      15% {
+        transform: translateX(0);
+      }
+
+      45% {
+        transform: translateX(230px);
+      }
+
+      65% {
+        transform: translateX(230px);
+      }
+
+      95% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes loading-text {
+      0% {
+        content: "Loading";
+      }
+
+      25% {
+        content: "Loading.";
+      }
+
+      50% {
+        content: "Loading..";
+      }
+
+      75% {
+        content: "Loading...";
+      }
+    }</style><title>BPIT - VUE</title><link href=/bpit-vue/css/chunk-0fc76b88.d8ff47b0.css rel=prefetch><link href=/bpit-vue/css/chunk-11542bdf.fbcf0e4c.css rel=prefetch><link href=/bpit-vue/css/chunk-20705341.42aee5ba.css rel=prefetch><link href=/bpit-vue/css/chunk-21be7e2d.ebe5c67d.css rel=prefetch><link href=/bpit-vue/css/chunk-428cd3c4.b5b4cbb5.css rel=prefetch><link href=/bpit-vue/css/chunk-476541d2.6c4dd0be.css rel=prefetch><link href=/bpit-vue/css/chunk-5c43aa38.738d08b1.css rel=prefetch><link href=/bpit-vue/css/chunk-6609f66f.acd30fb2.css rel=prefetch><link href=/bpit-vue/css/chunk-69841f05.8cbe6b45.css rel=prefetch><link href=/bpit-vue/css/chunk-76d1ef78.3a268ec1.css rel=prefetch><link href=/bpit-vue/css/chunk-7990c7f9.2aecdc25.css rel=prefetch><link href=/bpit-vue/css/chunk-89544778.cc1737ef.css rel=prefetch><link href=/bpit-vue/css/chunk-9902f4bc.713d09b6.css rel=prefetch><link href=/bpit-vue/css/chunk-c76dfc5a.421669a5.css rel=prefetch><link href=/bpit-vue/css/chunk-ec66b698.cc9650a5.css rel=prefetch><link href=/bpit-vue/css/chunk-ecd7d25e.004af2f4.css rel=prefetch><link href=/bpit-vue/css/chunk-fbb281ee.629cce67.css rel=prefetch><link href=/bpit-vue/js/chunk-0fc76b88.726ee3f3.js rel=prefetch><link href=/bpit-vue/js/chunk-11542bdf.09b286c4.js rel=prefetch><link href=/bpit-vue/js/chunk-20705341.241308b3.js rel=prefetch><link href=/bpit-vue/js/chunk-21be7e2d.f87ae5b7.js rel=prefetch><link href=/bpit-vue/js/chunk-428cd3c4.3c83170e.js rel=prefetch><link href=/bpit-vue/js/chunk-476541d2.d53d4191.js rel=prefetch><link href=/bpit-vue/js/chunk-5c43aa38.d36b7174.js rel=prefetch><link href=/bpit-vue/js/chunk-6609f66f.aed25ac6.js rel=prefetch><link href=/bpit-vue/js/chunk-69841f05.cd21d9c5.js rel=prefetch><link href=/bpit-vue/js/chunk-76d1ef78.798d2cce.js rel=prefetch><link href=/bpit-vue/js/chunk-7990c7f9.93bd9908.js rel=prefetch><link href=/bpit-vue/js/chunk-89544778.21081042.js rel=prefetch><link href=/bpit-vue/js/chunk-9902f4bc.fc26c4a7.js rel=prefetch><link href=/bpit-vue/js/chunk-c76dfc5a.1e84dcbb.js rel=prefetch><link href=/bpit-vue/js/chunk-ec66b698.e5309d6b.js rel=prefetch><link href=/bpit-vue/js/chunk-ecd7d25e.f07f48ef.js rel=prefetch><link href=/bpit-vue/js/chunk-fbb281ee.87d2dcfb.js rel=prefetch><link href=/bpit-vue/css/app.9ea919eb.css rel=preload as=style><link href=/bpit-vue/js/app.2eea6b99.js rel=preload as=script><link href=/bpit-vue/js/chunk-vendors.2843e6ab.js rel=preload as=script><link href=/bpit-vue/css/app.9ea919eb.css rel=stylesheet></head><body><noscript><strong>We're sorry but my-project-vuecli doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><a href=https://github.com/dreambo8563/bpit-vue><img style="position: absolute; top: 0; right: 0; border: 0;z-index:10;" src=https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png alt="Fork me on GitHub"></a><div class=index-loaders-container><div class=container><div class=index-loader><div class=index-loader--dot></div><div class=index-loader--dot></div><div class=index-loader--dot></div><div class=index-loader--dot></div><div class=index-loader--dot></div><div class=index-loader--dot></div><div class=index-loader--text></div></div></div></div><div id=app></div><script src=/bpit-vue/js/chunk-vendors.2843e6ab.js></script><script src=/bpit-vue/js/app.2eea6b99.js></script></body><script>const loaderEl = document.querySelector(".index-loaders-container")
+  loaderEl.className = "hidden index-loaders-container"</script></html>
